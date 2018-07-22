@@ -1,0 +1,18 @@
+  damage = 10
+
+.data
+  characterHealth word 100
+  enemyTouch word 0
+
+
+.code
+  lea ax, characterHealth	;load RAM address of characterHealth to address register
+  mov dx, [ax]			;load value of characterHealth to Data Register
+  lea ax, end			;load ROM address End to address register
+  jle ax			;jump to End if data register is zero
+  mov ax, damage
+  mov dx, ax			;load value of EnemyTouch into Data Register (one input of ALU)
+  lea ax, characterHealth	;load RAM address of characterHealth into address register (second input of alu)
+  sub [ax], dx			;load (value of characterHealth - value of Enemy Touch) to value of characterHealth in RAM
+
+end: ;(defining End)

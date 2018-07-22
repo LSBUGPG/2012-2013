@@ -1,0 +1,17 @@
+data
+
+0x0000 lives
+0x0004 score
+
+
+ ROM  :  Code
+
+0x0000: 0x0003		3 into address
+0x0001: 0xEC10 		copy 3 from address to data reg
+0x0002: 0x0000		pointer to lives into address
+0x0003: 0xE308		copy 3 into lives
+
+0x0004: 0x0200		200 into address register
+0x0005: 0xE7E0		add 200 to the data register
+
+

@@ -1,0 +1,16 @@
+data
+
+lives = 3		; this value is stored into address register
+score = 200		; and is at the start of the game
+
+code
+
+updateLives		; playerLives -= 1
+
+lea ax, number		; load 3 into address register
+mov dx, number 		; copy 3 lives from address to data reg
+lea ax, [ax]		; pointer to lives into address
+mov number, [ax]	; copy 3 into lives
+
+lea ax, number		; load 200 into address register
+mov dx, number 		; add 200 to the data register 

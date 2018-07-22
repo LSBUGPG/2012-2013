@@ -1,0 +1,14 @@
+if (enemyBulletHitsPlayer) { health + (-10); }
+
+if (health == 0) { loseLife; playExplosionSound; }
+
+if (lives == 0) { gamOver; }
+
+if (billBulletHits) { enemyHealth + (-50); }
+
+if (enemyHealth == 0) { removeEnemy; playExplosionSound; }
+
+if (removeEnemy) { points + 10 }
+
+if (points == 100) { playerWins; }
+

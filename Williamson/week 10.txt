@@ -1,0 +1,9 @@
+In order to optimize the scripts in my game I can use loops as well as functions that call other scripts.
+
+For example I could use a GUI manager script to handle several similar things, and in other scripts use a function that calls to this scripts.
+
+e.g
+
+guiManager.needKey = true
+
+This will then change something in the gui manager script and mean I dont have to have gui functions spread all over different scripts that it relates to.

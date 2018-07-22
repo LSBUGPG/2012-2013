@@ -1,0 +1,19 @@
+if (player1Fuel == 0) { player2Wins; }
+
+if (playerPositionY < 0) { playerTeleportBottom; }
+
+if (!(player1PositionY+(-480) < 0)) { player1TeleportTop; }
+
+if (!(player2PositionY+(-480) < 0)) { player2TeleportTop; }
+
+if ((player1X + (-player2X) == 0) && (player1Y + (-player2Y) == 0)) { explode; }
+
+if (player1Missile == 3) { player1ButtonAinactive; }
+
+if (player2Missile == 3) { player2ButtonAinactive; }
+
+
+
+
+
+if ( 5-6 > 0 )

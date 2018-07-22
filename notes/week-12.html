@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Week 12 notes</title>
+    <style type="text/css">
+      table
+      {
+      border-collapse: collapse;
+      }
+      table, tr, th, td
+      {
+      border: 1px solid black;
+      padding-left: 8px;
+      padding-right: 8px;
+      }
+      th, td
+      {
+      min-width: 2em;
+      }
+      pre
+      {
+      border-style: solid
+      }
+      .comment
+      {
+      color: green;
+      }
+    </style>
+    <link rel="stylesheet" title="plain" type="text/css" href="plain.css" />
+  </head>
+  <body>
+    <h2>Breaking a project in modules</h2>
+	<ul>
+	  <li>taking Pong as an example:<ul>
+	      <li>"physics" i.e. object updates</li>
+	      <li>collision detection</li>
+	      <li>"renderer" i.e. sprite drawing</li>
+	      <li>text drawing</li>
+	      <li>math functions</li>
+	      <li>audio output</li>
+	      <li>input devices</li>
+	      <li>gameplay rules</li>
+	  </ul></li>
+	  <p><img src="pong-modules.png" /></p>
+	</ul>
+    <h2>Schedules and estimates</h2>
+	<ul>
+	  <li>log: tells you how long something took</li>
+	  <li>estimate: predicts how long something will take</li>
+	  <li>schedule: lays out when each task can start</li>
+	  <li>example schedule with 1 resource:</li>
+      <p><table>
+		<tr><th colspan="4">task</th><th colspan="4">estimated</th><th colspan="4">actual</th></tr>
+		<tr><th>name</th><th>id</th><th>depends</th><th>resource</th><th>start date</th><th>start time</th><th>end date</th><th>end time</th><th>start date</th><th>start time</th><th>end date</th><th>end time</th></tr>
+		<tr><td>design math module</td><td>1</td><td></td><td>paul</td><td>30/03/12</td><td>9:00</td><td>30/03/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design audio module</td><td>2</td><td></td><td>paul</td><td>30/03/12</td><td>14:00</td><td>30/03/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design input module</td><td>3</td><td></td><td>paul</td><td>02/04/12</td><td>9:00</td><td>02/04/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design renderer module</td><td>4</td><td>1</td><td>paul</td><td>02/04/12</td><td>14:00</td><td>02/04/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design physics module</td><td>5</td><td>1</td><td>paul</td><td>03/04/12</td><td>9:00</td><td>03/04/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design collision module</td><td>6</td><td>1</td><td>paul</td><td>03/04/12</td><td>14:00</td><td>03/04/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design text module</td><td>7</td><td>4</td><td>paul</td><td>04/04/12</td><td>9:00</td><td>04/04/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design debug module</td><td>8</td><td>7</td><td>paul</td><td>04/04/12</td><td>14:00</td><td>04/04/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+	  </table></p>
+	  <li>example schedule with more resources:</li>
+	  <p><table>
+		<tr><th colspan="4">task</th><th colspan="4">estimated</th><th colspan="4">actual</th></tr>
+		<tr><th>name</th><th>id</th><th>depends</th><th>resource</th><th>start date</th><th>start time</th><th>end date</th><th>end time</th><th>start date</th><th>start time</th><th>end date</th><th>end time</th></tr>
+		<tr><td>design math module</td><td>1</td><td></td><td>paul</td><td>30/03/12</td><td>9:00</td><td>30/03/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design audio module</td><td>2</td><td></td><td>arkin</td><td>30/03/12</td><td>9:00</td><td>30/03/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design input module</td><td>3</td><td></td><td>liam</td><td>30/03/12</td><td>9:00</td><td>30/03/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design renderer module</td><td>4</td><td>1</td><td>paul</td><td>30/03/12</td><td>14:00</td><td>30/03/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design physics module</td><td>5</td><td>1</td><td>arkin</td><td>30/03/12</td><td>14:00</td><td>30/03/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design collision module</td><td>6</td><td>1</td><td>liam</td><td>30/03/12</td><td>14:00</td><td>30/03/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design text module</td><td>7</td><td>4</td><td>paul</td><td>02/04/12</td><td>9:00</td><td>02/04/12</td><td>13:00</td><td></td><td></td><td></td><td></td></tr>
+		<tr><td>design debug module</td><td>8</td><td>7</td><td>paul</td><td>02/04/12</td><td>14:00</td><td>02/04/12</td><td>18:00</td><td></td><td></td><td></td><td></td></tr>
+	  </table></p>
+    </ul>
+    <h2>Submission format</h2>
+	<ul>
+		<li>demo how to export a package in Unity</li>
+		<li>to keep it simple: everything in by next Sunday</li>
+    </ul>
+    <h2>Quiz</h2>
+	<ul>
+		<li>retake the quiz from week 1</li>
+		<li>link is in the week 1 notes</li>
+    </ul>
+  </body>
+</html>

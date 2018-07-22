@@ -1,0 +1,33 @@
+#pragma strict
+
+                        
+var bulletPrefab:GameObject;
+var spawnSocket:Transform;
+var timer : float = 0;
+                      
+
+function Update()
+{
+	if (Input.GetMouseButton(0) && timer >= 0.5)
+	{
+		Fire();
+		timer =0;
+	}
+	
+	timer += Time.deltaTime;
+}
+
+function Fire()
+{
+	print("I'm firing the gun");
+	var bulletIns = Instantiate(bulletPrefab, spawnSocket.position, spawnSocket.rotation);
+	
+	// Apply a force relative to the camera's z-axis
+	var aimPoint : Vector3 = camera.ScreenToWorldPoint (Vector3 (Input.mousePosition.x,Input.mousePosition.y,camera.nearClipPlane + 10));
+	var aimVector = aimPoint - spawnSocket.transform.position;
+	
+	bulletIns.rigidbody.AddForce(aimVector*500);
+	bulletIns.name = "Rounds";
+
+}
+

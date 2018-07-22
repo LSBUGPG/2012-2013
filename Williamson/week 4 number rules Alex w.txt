@@ -1,0 +1,16 @@
+For my game idea where the player moves around the screen and is chased by objects that constantly move towards them. 
+player has certain amounts of lives and when they loose them all the game is over. Their high score is the time they survive.
+
+If they last 100 seconds without dying they get another life.
+
+
+if (lives == 0) { gameOver; }
+
+if (health + (-damage) < 0) { loseLife; }
+
+if (time == 100) { addLife; }
+
+if (time +(-100) == 0) { addLife; }
+
+
+ 

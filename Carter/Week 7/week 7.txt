@@ -1,0 +1,14 @@
+.data
+
+HeroPosX word 320 ; 
+HeroPosY word 240 ;
+
+HeroOffTop: ; 
+(HeroPosY < 0)
+
+lea ax, HeroPosY ; 
+mov dx, [ax] ;
+
+HeroOffBottom: ; (HeroPosY - screenHeight >= 0)
+lea ax, HeroPosY ; 
+mov dx, [ax] ;

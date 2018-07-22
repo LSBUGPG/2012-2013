@@ -1,0 +1,20 @@
+I can use loops to destroy and keep my bullet count low enough for the game to work. 
+
+instead of 
+
+function Fire()
+{
+	print("I'm firing the gun");
+	var bulletIns = Instantiate(bulletPrefab, spawnSocket.position, spawnSocket.rotation);
+
+I would use a script on the spawner to destroy the bullets after an amount of time if they have not hit an enemy.
+
+e.g. 
+
+public var lifeTime : int = 2;
+
+
+function Awake () {
+	Destroy(gameObject, lifeTime);
+
+}

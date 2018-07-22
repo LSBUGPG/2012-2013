@@ -1,0 +1,31 @@
+screenWidth = 640 ; 
+screenHeight = 480 ; 
+
+.data
+playerPositionX word 320 ; 
+playerPositionY word 240 ; 
+playerVelocityX word 0 ; 
+playerVelocityY word 1 ; 
+
+.code
+updatePlayerPositionY: ; 
+lea ax, playerMoveY ; 
+mov dx, [ax] ; 
+lea ax, playerMoveY ; 
+add [ax], dx ; 
+
+playerOffScreen: 
+lea ax, playerPositionY ; 
+mov dx, [ax] ; 
+mov ax, screenHeight ; 
+sub dx, ax ; 
+lea ax, endOfLoop ; 
+jl ax ; 
+
+invertPlayerMoveY: 
+lea ax, playerMoveY ; 
+neg [ax] ; 
+
+endOfLoop:
+lea ax, updatePlayerPositionY ; 
+jmp ax;

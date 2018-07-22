@@ -1,0 +1,26 @@
+Donkykong
+
+if (playerOnScreen) { startgame }
+
+if (playerAtLadder && (PlayerHitsUpKey || playerHitDownKey)) { playerClimbsLadder; }
+
+if (playerTouchBarrel || playerTouchFlameEnemy) { PlayerDies; }
+
+if (playerHasHammer (playerTouchBarrel || playerTouchFlameEnemy)) { PlayerScore300Points; }
+
+if (playerHitJumpKey) { PlayerJumps }
+
+if (playerHitLeftKey) { playerMoveLeft; }
+
+if (playerHitRightKey) { playerMoveRight; }
+
+if (playerJumpOverBarrel) { playerScores100points; }
+
+If (playerTouchUmbrella || playerTouchTank || playerTouchPhone) { PlayerScore800Points; }
+
+if (playerReachesPrincess) { PlayerAdvancesToNextLevel; }
+
+if (playerTouchYellowCap) { SmallGapInFloor; }
+
+if (playerTouchAllYellowCaps { PlayerWinsGame; }
+

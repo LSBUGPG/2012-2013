@@ -1,0 +1,17 @@
+BITMAP 8 8
+
+DB
+
+A5
+
+DB
+
+FF
+
+BD
+
+DB
+
+E7
+
+FF

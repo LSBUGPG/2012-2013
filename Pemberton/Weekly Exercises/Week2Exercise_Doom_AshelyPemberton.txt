@@ -1,0 +1,49 @@
+Doom
+
+if (bulletHitEnemy) {enemyHealthDecrease;}
+
+if (enemyNoHealth) {enemyDies;}
+
+if (playerOnground && playerHitsJumpButton) {jump;}
+
+if (playerAmmoBox) {ammoIncrease1;}
+
+if (playerAmmoBox && playerMaxAmmo) {cantPickUp;}
+
+if (playerGetsHit && !playerSheildTrue ) {playerHealthDecrease1;}
+
+if (playerHitsAcid) {playerHealthDecrease1;}
+
+if (playerGainsSheild && !playerHasSheild) {playerHasSheild; playerHealthStop;}
+
+if (playerNoHealth) {gameOver;}
+
+if (gameOver) {gameReset;}
+
+if (gameStart) {playMusic;}
+
+if (playerLooksAtItem) {itemsFacePlayer;}
+
+if (enemyCanDissapear) {enemyAplha100;)
+
+if (playerHealthDecrease1) {faceSpriteShowsDamage;}
+
+if (playerGainsHealth && !fullHealth) {playerHeal1; faceSpriteUndoDamage;}
+
+if (inputWPress) {playerMoveForward;}
+
+if (inputSPress) {playerMoveBackward;}
+
+if (inputAPress) {playerMoveLeft;}
+
+if (inputDPress) {playerMoveRight;}
+
+if (inputLeftMouse) {gunFireTrue;}
+
+if (!playerInput) {playerIdle; stopGunFire;}
+
+if (gunFireTrue) {spawnBulletOneFrame; ammoDecrease1;}
+
+if (ammoEmpty) {stopGunFire;}
+
+if (!ammoEmpty && gunFireTrue) {ammoDecrease1;}

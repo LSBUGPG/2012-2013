@@ -1,0 +1,56 @@
+RAM : data
+0x0000: PlayerPositionX
+0x0001: PlayerPositionY
+
+ROM : 	code 		notes
+	
+			checkPlayerOffTop: (PlayerPositionY >= 480)
+0x0001: 0x01E0 		load 480 into address register
+0x0002: 0xEC10 		load value of address register into data register
+0x0003: 0x0001 		load address of PlayerPositionY into address register
+0x0004: 0xF1D0 		load PlayerPositionY - 480 into data register
+0x0005: 0x0010 		load ROM address of TeleportBottom code into address register
+0x0006: 0xE303 		jump to TeleportBottom code if data register >= 0
+
+			checkPlayerOffBottom: (PlayerPositionY < 0)
+0x0007: 0x0001 		load address of PlayerPositionY into address register
+0x0008: 0xFC10 		load PlayerPositionY into data register
+0x0009: 0x0010 		load ROM address of TeleportTop code into address register
+0x000A: 0xE304 		jump to TeleportTop code if data register < 0
+
+
+			checkPlayerOffRight: (PlayerPositionX >= 480)
+0x000B: 0x01E0 		load 480 into address register
+0x000C: 0xEC10 		load value of address register into data register
+0x00AD: 0x0001 		load address of PlayerPositionX into address register
+0x00AE: 0xF1D0 		load PlayerPositionX - 480 into data register
+0x00AF: 0x0010 		load ROM address of TeleportLeft code into address register
+0x00A1: 0xE303 		jump to TeleportLeft code if data register >= 0
+
+			checkPlayerOffLeft: (PlayerPositionY < 0)
+0x00A2: 0x0001 		load address of PlayerPositionY into address register
+0x00A3: 0xFC10 		load PlayerPositionY into data register
+0x00A4: 0x0010 		load ROM address of TeleportRight code into address register
+0x00A5: 0xE304 		jump to TeleposrtRight code if data register < 0
+0x00A6: 0x0012 		load ROM address of endOfLoop code into address register
+0x00A7: 0xEFC7 		jump to endOfLoop code
+
+			TeleportBottom: PlayerPositionY = 0
+0x00A8: 0x0003 		load address of PlayerPositionY into address register
+0x00A9: 0xFCC8 		load value 0 into PlayerPositionY in RAM
+
+			TeleportTop: PlayerPositionY = 480
+0x00B1: 0x0003 		load address of PlayerPositionY into address register
+0x00B2: 0xFCC8 		load value 480 into PlayerPositionY in RAM
+
+			TeleportLeft: PlayerPositionX = 0
+0x00B3: 0x0003 		load address of PlayerPositionX into address register
+0x00B4: 0xFCC8 		load value 0 into PlayerPositionX in RAM
+
+			TeleportRight: PlayerPositionX = 480
+0x00B5: 0x0003 		load address of PlayerPositionX into address register
+0x00B6: 0xFCC8 		load value 480 into PlayerPosition X in RAM
+			
+			endOfLoop
+0x00B7: 0x0000 		load ROM address of CheckPlayeroffTop code into address register
+0x00B8: 0xEFC7 		jump to CheckPlayeroffTop

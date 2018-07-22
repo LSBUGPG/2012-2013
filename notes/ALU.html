@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>ALU control bits</title>
+    <style type="text/css">
+      table
+      {
+      border-collapse:collapse;
+      }
+      table, tr, th, td
+      {
+      border:1px solid black;
+      padding-left:8px;
+      padding-right:8px;
+      }
+      th, td
+      {
+      min-width: 2em;
+      }
+    </style>
+    <link rel="stylesheet" title="plain" type="text/css" href="plain.css" />
+  </head>
+  <body>
+    <h2>ALU control bits</h2>
+    <p>The A input is the data register.</p>
+    <p>The B input is either the address register or RAM</p>
+    <table>
+      <tr><th colspan="2">A input</th><th colspan="2">B input</th><th colspan="2">output</th><th rowspan="3">result</th></tr>
+      <tr><th>c1</th><th>c2</th><th>c3</th><th>c4</th><th>c5</th><th>c6</th></tr>
+      <tr><th>FILTER?</th><th>FLIP?</th><th>FILTER?</th><th>FLIP?</th><th>ADD?</th><th>FLIP?</th></tr>
+      <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>-1</td></tr>
+      <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>A</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>B</td></tr>
+      <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>~A</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>~B</td></tr>
+      <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-A</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>-B</td></tr>
+      <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>A + 1</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>B + 1</td></tr>
+      <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>A - 1</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>B - 1</td></tr>
+      <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>A + B</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>A - B</td></tr>
+      <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>B - A</td></tr>
+      <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>A &amp; B</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>A | B</td></tr>
+    </table>
+  </body>
+</html>

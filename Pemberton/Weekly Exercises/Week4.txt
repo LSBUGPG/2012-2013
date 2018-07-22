@@ -1,0 +1,21 @@
+if (speed == 10) { moveCar; }
+
+
+if (!(speed == 0) && !(speed < 0)) { stopCar; }
+
+
+if ((chasisDamage < 0) && (chasisDamage == 0 )){ blowUp; }
+
+
+if (nitrosLevel < 10) {nitrosLevel++;}
+
+
+if ((nitrosLevel > 100) && (nitrosLevel == 100)) { nitrosFull; }
+
+
+if ((nitrosLevel == 100) && boostButtonDown) {speed = 30;}
+
+
+
+
+i

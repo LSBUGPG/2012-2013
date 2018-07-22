@@ -1,0 +1,29 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 damage to player and game over\
+\
+if (( shield <  20 ) && !( shield == 0 )) \{ flashYellow \}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 if ( (shields < 0) && (damage == 10) ) \{takeHealthDamage\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 if ( life < 0 ) \{ resetLevel; \}\
+if ( lives == 0) \{ gameOver; \}\
+\
+win game and enemy \
+\
+if ( enemy health < 0 ) \{ 30 Points; \}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 if ( bossHealth < 0 ) \{ playerWins \}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 if ( !(points + (-highScore) < 0) ) \{ newHighScore; \}\
+\
+weapon\
+\
+\
+if ( (bullets == 0) && (fireButtonDown) ) \{ playEmptySound; \}\
+if ( !(bullets < 0) && (fireButtonDown) ) \{fireGun\}\
+if ( gunDamage < 50 ) \{changeWeapon\} }

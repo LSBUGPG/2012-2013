@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Jump control bits</title>
+    <style type="text/css">
+      table
+      {
+      border-collapse:collapse;
+      }
+      table, tr, th, td
+      {
+      border:1px solid black;
+      padding-left:8px;
+      padding-right:8px;
+      }
+      th, td
+      {
+      min-width: 2em;
+      }
+    </style>
+    <link rel="stylesheet" title="plain" type="text/css" href="plain.css" />
+  </head>
+  <body>
+    <h2>Jump control bits</h2>
+    <p>Determines whether the program counter should jump to the address in the address register or continue with the next instruction.</p>
+    <p>The decision is based on the following control bits and the output from the ALU.</p>
+    <table>
+      <tr><th colspan="3">condition</th><th rowspan="3">meaning</th></tr>
+      <tr><th>j1</th><th>j2</th><th>j3</th></tr>
+      <tr><th>&lt; 0</th><th>== 0</th><th>&gt; 0</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td><td>don't jump</td></tr>
+      <tr><td>0</td><td>0</td><td>1</td><td>jump if output &gt; 0</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td><td>jump if output == 0</td></tr>
+      <tr><td>0</td><td>1</td><td>1</td><td>jump if output &gt;= 0</td></tr>
+      <tr><td>1</td><td>0</td><td>0</td><td>jump if output &lt; 0</td></tr>
+      <tr><td>1</td><td>0</td><td>1</td><td>jump if output != 0</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>jump if output &lt;= 0</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td><td>always jump</td></tr>
+    </table>
+  </body>
+</html>

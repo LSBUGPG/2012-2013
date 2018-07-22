@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Machine code instructions</title>
+    <style type="text/css">
+      table
+      {
+      border-collapse:collapse;
+      }
+      table, tr, th, td
+      {
+      border:1px solid black;
+      padding-left:8px;
+      padding-right:8px;
+      }
+      th, td
+      {
+      min-width: 2em;
+      }
+    </style>
+    <link rel="stylesheet" title="plain" type="text/css" href="plain.css" />
+  </head>
+  <body>
+    <h2>Load instruction</h2>
+    <p>Loads the given value into the address register. The range of this value is 0 to 32,767. Bit 16 must be 0 otherwise the instruction will be interpreted as a compute instruction. Hex digit 4 therefore cannot be greater than 7.</p>
+    <form>
+      <table>
+	<tr>
+	  <th>Hex digit</th>
+	  <th colspan="4">4</th>
+	  <th colspan="4">3</th>
+	  <th colspan="4">2</th>
+	  <th colspan="4">1</th>
+	</tr>
+	<tr>
+	  <th>Binary digit</th>
+	  <th>16</th>
+	  <th>15</th>
+	  <th>14</th>
+	  <th>13</th>
+	  <th>12</th>
+	  <th>11</th>
+	  <th>10</th>
+	  <th>9</th>
+	  <th>8</th>
+	  <th>7</th>
+	  <th>6</th>
+	  <th>5</th>
+	  <th>4</th>
+	  <th>3</th>
+	  <th>2</th>
+	  <th>1</th>
+	</tr>
+	<tr>
+	  <td>Bits</td>
+	  <td><input type="checkbox" disabled="true"/></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	</tr>
+	<tr>
+	  <td>Hex code</td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	</tr>
+      </table>
+    </form>
+    <h2>Compute instruction</h2>
+    <p>Performs a computation on the ALU:</p>
+    <ul>
+      <li>a - if set, the value from RAM is passed to the ALU</li>
+      <li>c1 to c6 - these program the <a href="ALU.html">ALU</a></li>
+      <li>d1 - if set, loads output into address register</li>
+      <li>d2 - if set, loads output into data register</li>
+      <li>d3 - if set, loads output into RAM</li>
+      <li>j1 to j3 - program the <a href="JumpControl.html">jump control</a></li>
+    </ul>
+    <form>
+      <table>
+	<tr>
+	  <th>Hex digit</th>
+	  <th colspan="4">4</th>
+	  <th colspan="4">3</th>
+	  <th colspan="4">2</th>
+	  <th colspan="4">1</th>
+	</tr>
+	<tr>
+	  <th>Binary digit</th>
+	  <th>16</th>
+	  <th>15</th>
+	  <th>14</th>
+	  <th>13</th>
+	  <th>12</th>
+	  <th>11</th>
+	  <th>10</th>
+	  <th>9</th>
+	  <th>8</th>
+	  <th>7</th>
+	  <th>6</th>
+	  <th>5</th>
+	  <th>4</th>
+	  <th>3</th>
+	  <th>2</th>
+	  <th>1</th>
+	</tr>
+	<tr>
+	  <th>Encoding</th>
+	  <th></th>
+	  <th></th>
+	  <th></th>
+	  <th>a</th>
+	  <th>c1</th>
+	  <th>c2</th>
+	  <th>c3</th>
+	  <th>c4</th>
+	  <th>c5</th>
+	  <th>c6</th>
+	  <th>d1</th>
+	  <th>d2</th>
+	  <th>d3</th>
+	  <th>j1</th>
+	  <th>j2</th>
+	  <th>j3</th>
+	</tr>
+	<tr>
+	  <td>Bits</td>
+	  <td><input type="checkbox" checked="true" disabled="true"/></td>
+	  <td><input type="checkbox" checked="true" disabled="true"/></td>
+	  <td><input type="checkbox" checked="true" disabled="true"/></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	  <td><input type="checkbox" /></td>
+	</tr>
+	<tr>
+	  <td>Hex code</td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	  <td colspan=4><input type="texarea" cols="1" rows="1" /></td>
+	</tr>
+      </table>
+    </form>
+    <p>Encode the machine code as <a href="Hex2Binary.html">hexadecimal</a>.</p>
+  </body>
+</html>

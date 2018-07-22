@@ -1,0 +1,13 @@
+if (player1ControllerRight && !playerHeroOffRight) { movePlayerHeroRight; }
+
+if (player1ControllerLeft && !playerHeroOffLeft) { movePlayerHeroLeft; }
+
+if (player1PressButton) { heroShoot; }
+
+if (heroHitsEnemy) { loseLife; }
+
+if (lives + (-1) < 0) { Death animation, restart level; }
+
+if (heroHitsBox) { spawnPowerup; }
+
+if (herohitsPowerUp) { newGun; }

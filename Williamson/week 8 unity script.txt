@@ -1,0 +1,17 @@
+var hitPoints: int = 100; 
+var enemyDamage:int = 50; 
+
+function OnControllerColliderHit (hit : ControllerColliderHit)
+
+{ 
+    if(hit.collider.gameObject.tag == "enemy") 
+    {
+    	print ("yo");
+        hitPoints -= enemyDamage;
+    } 
+
+    if (hitPoints <= 0)
+    { 
+        Destroy(gameObject);
+    } 
+} 

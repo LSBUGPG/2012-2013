@@ -1,0 +1,20 @@
+if (invaderoffLeft || InvaderoffRight) { bounceInvaderhorizontally; }
+
+if (bullethitsInvader) { removeInvader; }
+
+if (bulletoffBottom) {removeBullet; }
+
+if (bulletofftop) {removeBullet; }
+
+if (bullethitsPlayer1) {resetPlayer1; }
+
+if (bullethitsInvader) {Player1scores; }
+
+if (Player1ControllerLeft && !Player1ShipoffLeft) { movePlayer1ShipLeft; }
+
+if (Player1ControllerRight && !Player1ShipoffRight) { movePlayer1ShipRight; }
+
+if (Player1ControllerUp && !Player1ShipoffUp) { movePlayer1ShipUp; }
+
+if (Player1ControllerDown && !Player1ShipoffDown) { movePlayer1ShipDown; }
+

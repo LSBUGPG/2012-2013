@@ -1,0 +1,57 @@
+screenWidth = 480
+screenHeight = 480
+
+.data
+	playerPositionX word 0
+	playerPositionY word 480
+	
+.code
+checkPlayerOffTop:
+	lea ax, playerPositionY
+	mov dx, [ax]
+	sub dx, screenHeight 
+	lea ax, teleportBottom
+	jl ax
+
+checkPlayerOffBottom:
+	lea ax, playerPositionY
+	mov dx, [ax]
+	lea ax, teleportTop
+	jl ax
+
+checkPlayerOffRight:
+	lea ax, playerPositionX
+	mov dx, [ax]
+	sub dx, screenWidth
+	lea ax, teleportLeft
+	jl ax
+
+checkPlayerOffLeft:
+	lea ax, playerPositionX
+	mox dx, [ax]
+	lea ax, teleportRight
+	jl ax
+	lea ax, endOfLoop
+	jl ax
+
+TeleportBottom:
+	lea dx, 0
+	mov playerPositionY, dx
+
+TeleportTop:
+	lea dx, 480  
+	mov playerPositionY, dx
+
+TeleportLeft:
+	lea dx, 0
+	mov playerPositionX, dx
+
+TeleportRight:
+	lea dx, 480
+	mov playerPositionX, dx
+
+endOfLoop:
+	lea ax, checkPlayerOffTop
+	jmp ax
+
+	

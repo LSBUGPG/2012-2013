@@ -1,0 +1,28 @@
+if (ballOffTop || ballOffBottom) { bounceBallVertically; }
+
+if (ballOffLeft) { player2Scores; resetBall; }
+
+if (ballOffRight) { player1Scores; resetBall; }
+
+if (ballHitsPaddle1 || ballHitsPaddle2) { bounceBallHorizontally; }
+
+if (player1Scores && player1Has10) { player1Wins; }
+
+if (player2Scores && player2Has10) { player2Wins; }
+
+if (player1ControllerUp && !player1PaddleOffTop) { movePlayer1PaddleUp; }
+
+if (player1ControllerDown && !player1PaddleOffBottom) { movePlayer1PaddleDown; }
+
+if (player2ControllerUp && !player2PaddleOffTop) { movePlayer2PaddleUp; }
+
+if (player2ControllerDown && !player2PaddleOffBottom) { movePlayer2PaddleDown; }
+
+if (gameStart) {
+
+    resetBall;
+    resetPlayer1Score;
+    resetPlayer1Paddle;
+    resetPlayer2Score;
+    resetPlayer2Paddle;
+}

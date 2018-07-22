@@ -1,0 +1,7 @@
+var hitPoints: int = 100; 
+var enemyDamage: int = 50; 
+var gotKey : boolean = false;
+var enemyTouch : boolean = false;
+
+I plan to use boolean values to make certain things happen, such as opening a door with a key, etc. 
+

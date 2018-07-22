@@ -1,0 +1,7 @@
+if (lives == 0) {gameOver;}
+
+if (clock == 0) {playerLosesLife;}
+
+if (playerHitsStar && (!(time == 0) && !(time < 0))) {playerInvincibleFor10Seconds;}
+
+if (clock == 0 && (playerLives == 0)) {gameOver;}

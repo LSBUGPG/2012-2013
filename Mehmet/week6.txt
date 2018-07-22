@@ -1,0 +1,17 @@
+0x0000: playerPositionX
+0x0001: playerPositionY
+
+
+checkPlayerOffBottom: (playerPositionY >= 480)
+0x0004: 0x01E0 load 480 into address register
+0x0005: 0xEC10 load value of address register into data register
+0x0006: 0x0001 load address of playerPositionY into address register
+0x0007: 0xF1D0 load playerPositionY - 480 into data register
+
+
+
+checkPlayerOffTop: (playerPositionY < 0)
+0x000A: 0x0001 load address of playerPositionY into address register
+0x000B: 0xFC10 load playerPositionY into data register
+0x000E: 0x0012 load ROM address of endOfLoop code into address register
+0x000F: 0xEFC7 jump to endOfLoop code

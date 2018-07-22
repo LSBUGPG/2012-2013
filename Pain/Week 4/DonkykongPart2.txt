@@ -1,0 +1,48 @@
+Donkykong
+
+if (playerOnScreen) { startgame; }
+if (playerOnScreen + (-1) == 0) { StartGame; } 
+
+if (playerAtLadder && (PlayerHitsUpKey || playerHitDownKey)) { playerClimbsLadder; }
+if ((playerX + (-LadderX) == 0) && (playerY +(-LadderY) == 0)) { isOverLadder; }
+if ((isOverLadderX + (-HitUpKeyX) == 0) && (isOverLadderY + (-HitUpKeyY) == 0) { ClimbUpLadder; }
+if ((isOverLadderX + (-HitDownKeyX) == 0) && (isOverLadderY + (-HitDownKeyY) == 0) { ClimbDownLadder; }
+
+
+if (playerTouchBarrel || playerTouchFlameEnemy) { PlayerDies; }
+if (player + (-enemy) < 0) { PlayerDies; }
+
+if (playerHasHammer (playerTouchBarrel || playerTouchFlameEnemy)) { PlayerScore300Points; }
+if ((playerX +(-HammerX) == 0) && (playerY +(-HammerY) == 0)) { hasHammer; }
+if ((HasHammerX + (-barrelX) == 0) && (HasHammerY + (-barrelY) == 0) { Gain300Points; }
+if ((HasHammerX + (-EnemyX) == 0) && (HasHammerY + (-EnemyY) == 0) { Gain300Points; }
+
+if (playerHitJumpKey) { PlayerJumps; }
+if (playerHitJumpKey) + (-1) == 0) { PlayerJumps; }
+
+if (playerHitLeftKey) { playerMoveLeft; }
+if (playerHitLeftKey) + (-1) == 0) { PlayerMoveLeft; }
+
+if (playerHitRightKey) { playerMoveRight; }
+if (playerHitRightKey) + (-1) == 0) { PlayerMoveRight; }
+
+if (playerJumpOverBarrel) { playerScores100points; }
+if (points + 100) { PlayerScores100Points; }
+
+If (playerTouchUmbrella || playerTouchTank || playerTouchPhone) { PlayerScore800Points; } 
+If ((playerX +(-tankX) == 0) && (playerY +(-tankY) == 0)) { PlayerScore800Points; }
+If ((playerX +(-UmbrellaX) == 0) && (playerY +(-umbrellaY) == 0)) { PlayerScore800Points; }
+If ((playerX +(-PhoneX) == 0) && (playerY +(-phoneY) == 0)) { PlayerScore800Points; }
+
+if (playerReachesPrincess) { PlayerAdvancesToNextLevel; }
+if ((playerX +(-PrincessX) == 0) && (playerY +(-PrincessY))
+
+if (playerLivesReach0) { GameOver; }
+if (Lives == 0) { GameOver; }
+
+if (playerTouchYellowCap) { SmallGapInFloor; }
+if (yellowCap + (-1) == 0) { SmallGapInFloor; }
+
+if (playerTouchAllYellowCaps { PlayerWinsGame; } 
+if (YellowCap + (-8) == 0) { playerWinsGame; }
+

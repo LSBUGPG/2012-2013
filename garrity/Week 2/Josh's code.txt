@@ -1,0 +1,22 @@
+if (PlayerFires && billBulletOffScreen) { createBillBullet; }
+
+if (enemyBulletOffScreen) { createEnemyBullter; }
+
+if (enemyBullterInPlay && enemyBulletOnScreen) { moveEnemyBullet; }
+
+if (PlayerControllerLeft) { movePlayerLeft; }
+
+if (PlayerControllerRight) { movePlayerRight; }
+
+if (billBulletInPlay && billBulletOnScreen) { moveBillBullet; }
+ 
+if (billBulletHitsEnemy) { removeEnemy; playExplosionSound; }
+
+if (billBulletHitsWall) { bounceBillBulletHorizontally; playBeepSound; }
+
+if (enemyBulletHitsWall) { bounceEnemyBulletHorizontally; platBeepSound; }
+
+if (enemyBulletHitsPlayer) { !gameOver; playExplosionSound; }
+
+if (!gameOver) { playOneGameFrame; }
+

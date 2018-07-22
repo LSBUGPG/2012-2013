@@ -1,0 +1,42 @@
+if (playerHitsAmmo) { addAmmo; }
+
+if (playerHitsZombie) { removeHealth; }
+
+if (playerHitsZombie && playerHas0Health) { gameOver; }
+
+if (bulletHitsZombie) { addScore && killZombie; }
+
+if (playerControllerUp && !playerHitsTop) { movePlayerUp; }
+
+if (playerControllerUp && playerHitsTop) { movePlayerBottom; }
+
+if (playerControllerDown && !playerHitsBottom) { movePlayerDown; }
+
+if (playerControllerLeft && !playerHitsLeft) { movePlayerLeft; }
+
+if (playerControllerRight && !playerHitsRight) { movePlayerRight; }
+
+if (playerControllerFire) { fireBullet; }
+
+if (playerControllerFire && noAmmo) { !fireBullet; }
+
+if (!ZombiePresent) { spawnZombie; }
+
+if (playerHasNoAmmo || lowHealth) { playScaryMusic; }
+
+if (bulletHitsRightWall || bulletHitsleftWall  || 
+    bulletHitstopWall   || bulletHitsbottomWall   ) { removeBullet; }
+
+if (health + (-damage) < 0) { loseLife; }
+
+
+if (!gameOver) { playOneGameFrame }
+
+if (gameStart) {
+	
+	resetPlayer;
+	resetScore;
+	resetAmmo;
+	resetLives;
+}
+	

@@ -1,0 +1,34 @@
+.data
+	mousePosX word
+	mousePosY word
+
+.code
+updateMousePos:			;track mouse position
+	lea ax mousePosY	;load "mousePosY" to address "a"
+  	mov dx, [ax]		;move "a" To "d"
+ 	mov ax, dx		;load ingot register not memory
+ 	add dx, ax		;Multiply
+ 	mov ax, dx	
+ 	add dx, ax		
+ 	mov ax, dx		
+  	add dx, ax		
+  	lea ax, mousePosX	;load "mousePosX" to address "a"
+  	add dx, [ax]		;add value of "d" to "a"
+	
+spawnBlocks:
+	lea ax, updateMousePos	
+	
+
+
+ 01234567
+0
+1
+2
+3
+4
+5
+6
+7
+
+(mouseY * width) + mouseX
+

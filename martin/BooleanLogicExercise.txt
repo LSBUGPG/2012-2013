@@ -1,0 +1,33 @@
+if (playerControllerLeft) {movePlayerLeft;}
+
+if (playerControllerRight) {movePlayerRight;}
+
+if (playerControllerAButton) {jumpPlayer;}
+
+if (playerHits?Block) {addPowerup;}
+
+if (playerHitsPowerup) {increaseSizeTrue;}
+
+if (playerHitsEnemy && !increasesSizeTrue) {playerLosesLife;}
+
+if (playerHitsEnemy && increasesSizeTrue) {reducesSizeTrue;}
+
+if (playerFallsDownHole || playerTouchesLava) {playerLosesLife;}
+
+if (playerTouchesFlagpole && !lastLevel) {advanceToNextLevel;}
+
+if (playerTouchesFlagpole && lastLevel) {gameOver;}
+
+if (playerLives0) {gameOver;}
+
+if (timeReaches0) {playerLosesLife;}
+
+if (playerHitsStar) {playerInvincibleFor10Seconds;}
+
+if (playerHitsGreenMushroom) {playerLivesIncreaseBy1;}
+
+if (playerHitsFlower) {firePowerTrue;}
+
+if (playerControllerBButton && firePowerTrue) {shootFireball;}
+
+

@@ -1,0 +1,27 @@
+updateJumpmanPositionX :
+
+lea ax, jumpmanVelocityX
+
+mov dx, [ax]
+
+lea ax, invertJumpmanVelocity
+
+
+updateJumpmanPostionY :
+
+jl  ax
+
+lea ax, jumpmanVelocityY
+
+mov dx, [ax]
+
+lea ax, invertJumpmanVelocity
+
+jl  ax
+
+
+end of loop :
+
+lea ax, updateJumpmanPositionX
+
+jmp ax

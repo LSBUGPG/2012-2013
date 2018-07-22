@@ -1,0 +1,24 @@
+if (bulletHitsInvader) {playSplosionAnimation;}
+
+if (playerbulletHitsShield || enemybulletHitsShield)  {removeBlock} 
+
+if (enemyHitsPlayer || enemybulletHitsplayer) {playDeathAnimation}
+
+if (enemyHitsPlayer || enemybulletHitsplayer) {-1lifecount}
+
+if (playerbulletHitsSaucer) {playSparkAnimation}
+
+if (playerControllerLeft) {movePlayerLeft}
+
+if (playerControllerRight) {movePlayerRight}
+
+if (playerControllerSpace) {shootBullet}
+
+
+
+
+
+
+
+
+

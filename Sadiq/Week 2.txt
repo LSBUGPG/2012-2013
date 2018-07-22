@@ -1,0 +1,49 @@
+SpaceWar!
+
+if (player1ControllerButtonA) { player1FireMissile; }
+
+if (player2ControllerButtonA) { player2FireMissile; }
+
+if (player1MissileOffScreen) { player1MissileDelete; }
+
+if (player2MissileOffScreen) { player2MissileDelete; }
+
+if (player1ControllerLeft) { rotatePlayer1Clockwise; }
+
+if (player1ControllerRight) { rotatePlayer1Counterclockwise; }
+
+if (player1ControllerButtonB) { thrustForwardPlayer1; }
+
+if (player2ControllerLeft) { rotatePlayer2Clockwise; }
+
+if (player2ControllerRight) { rotatePlayer2Counterclockwise; }
+
+if (player2ControllerButtonB) { thrustForwardPlayer2; }
+
+if (plater1FireMissile && player1MissileHitsPlayer2) { player1Wins; }
+
+if (player2FireMissile && player2MissileHitsPlayer1) { player2Wins; }
+
+if (player1MissileMax) { player1ButtonAinactive; }
+
+if (player2MissileMax) { player2ButtonAincative; }
+
+if (player1FuelHas0) { player2Wins; }
+
+if (player2FuelHas0) { player1Wins; }
+
+if (player1ShipOffTop) { player1ShipTeleportBottom; }
+
+if (player1ShipOffBottom) { player1ShipTeleportTop; }
+
+if (player1ShipOffRight) { player1ShipTeleportLeft; }
+
+if (player1ShipoffLeft) { player1ShipTeleportRight; }
+
+if (player2ShipOffTop) { player2ShipTeleportBottom; }
+
+if (player2ShipOffBottom) { player2ShipTeleportTop; }
+
+if (player2ShipOffRight) { player2ShipTeleportLeft; }
+
+if (player2ShipoffLeft) { player2ShipTeleportRight; }

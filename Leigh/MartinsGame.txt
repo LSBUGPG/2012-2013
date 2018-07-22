@@ -1,0 +1,36 @@
+if (invaderoffLeft || InvaderoffRight) { bounceInvaderhorizontally; }
+
+if (invaderoffLeft || InvaderoffRight) { bounceInvaderdown; }
+
+if (invaderhitsWall2) {bounceInvaderRight}
+
+if (InvaderHitsWall3) {bounceInvader Left}
+
+if (bullethitsInvader) { removeInvader; }
+
+if (bulletoffBottom) {removeBullet; }
+
+if (bulletofftop) {removeBullet; }
+
+if (bullethitsPlayer1) {resetPlayer1; }
+
+if (bullethitsInvader) {Player1scores; }
+
+if (Player1ControllerLeft && !Player1ShipoffLeft) { movePlayer1ShipLeft; }
+
+if (Player1ControllerRight && !Player1ShipoffRight) { movePlayer1ShipRight; }
+
+if (Player1ControllerUp && !Player1ShipoffUp) { movePlayer1ShipUp; }
+
+if (Player1ControllerDown && !Player1ShipoffDown) { movePlayer1ShipDown; }
+
+if (Player1Firebullet && !Bulletonscreen) { FireBullet; }
+
+if (bullethitsWall) {removeBullet; }
+
+if (gameStart) {
+
+	resetInvader;
+	resetPlayer1Score;
+
+}

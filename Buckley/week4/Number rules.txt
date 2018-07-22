@@ -1,0 +1,3 @@
+if  (!(Lines + (-10) < 0 )) { Game Over; }
+
+

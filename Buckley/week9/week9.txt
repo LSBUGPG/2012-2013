@@ -1,0 +1,5 @@
+var waypointArray : Array = Array();
+var waypointIndex : int = 0;
+var movingOnRails : boolean = true;
+
+Using a boolean values and Arrays I can program enemy movement along a set path. 

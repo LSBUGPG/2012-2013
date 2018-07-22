@@ -1,0 +1,74 @@
+registers - ram instructions
+
+Set these values in ram at start of program:
+
+Character health = 100
+Enemy Touch = 0
+
+RAM	: Data
+
+0x0000	: characterHealth 
+0x0001  : enemyTouch 
+0x0002	: resetButton
+
+ROM	: code		notes
+
+loop
+
+0x0000	: 0x0000 	load RAM address of characterHealth to address register
+0x0001	: 0xfc10	load value of characterHealth to Data Register
+0x0002 	:		load ROM address End to address register
+0x0003 	: 0xe306	jump to End if data register is zero
+0x0004	: 0x0001	load RAM address of EnemyTouch into Address Register
+0x0005 	: 0xfc10	load value of EnemyTouch into Data Register (one input of ALU)
+0x0006	: 0x0000	load RAM address of characterHealth into address register (second input of alu)
+0x0007	: 0xe1c8 (A-B)	load (value of characterHealth - value of Enemy Touch) to value of characterHealth in RAM (not sure if this is B-A or B-1)
+
+jump to loop
+
+0x0008	: 0x0000
+______
+
+
+
+Health = 100
+
+
+: Loop
+
+load RAM address of Health into Address Register (an address value, top bit not set)
+load value of Health into Data Register (an instruction value do this by programing the a,c,d and j bits (in Hex))
+load ROM address of End into Address Register (an address value)
+jump to End if Data Register = 0  (an instruciton value to do this)
+
+
+
+Read value of Reset Button
+
+If value of Reset Button = 1 then set value of Health to 100
+
+
+Read value of Enemy Touch
+
+If value of Enemy Touch = 1 then set value of Health to Health - 1
+
+(e.g.
+
+load RAM address of Enemy Touch into Address Register
+load value of Enemy Touch into Data Register (one input of ALU)
+load RAM address of Health into Address Register (and therefore the second input to ALU)
+load value Health - value Enemy Touch into value Health in RAM (ALU function)
+)
+
+
+Goto Loop
+
+
+
+: End
+
+Read value of Reset Button
+
+If value of Reset Button = 1 then set value of Health to 100
+
+Goto Loop

@@ -1,0 +1,38 @@
+﻿if (button1Down) { rotateShape; }
+
+
+if (playerControllerLeft) { moveShapeLeft; }
+
+
+if (playerControllerRight) { moveShapeRight; }
+
+
+if (playerControllerDown) { moveShapeDown; }
+
+
+if (playerControllerLeft && button1Down) { moveShapeLeft; shapeRotate; }
+
+
+if (playerControllerRight && button1Down) { moveShapeRight;  shapeRotate; }
+
+
+if (playerControllerDown && button1Down) { moveShapeDown; shapeRotate; }
+
+
+if (shapeOffTop) { player1Loses; }
+
+
+if (shapeHitOthershape) { lockshapePosition; }
+
+
+if (lineShapeFull) { removeFullLine; }
+
+
+if (gameStart) {
+
+
+        resetShape;
+        resetPlayerScore;
+
+
+}

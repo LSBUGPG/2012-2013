@@ -1,0 +1,64 @@
+var health:int = 100;
+
+if (takenDamage == true)
+	{
+		health -= 3;
+		print(health);
+	}
+	
+	if(health <=0){
+
+		Application.LoadLevel("TopDownShooter");
+
+
+
+
+
+
+function Update () {
+	if(Input.GetButtonDown("Fire1")){
+	
+		if(!bulletPrefab || !bulletSpeed) {
+			Debug.Log('[Shoot] bulletprefab or bulletSpeed is undefined');
+		} else {
+			var bulletCreate = Instantiate(bulletPrefab,GameObject.Find("spawnPoint").transform.position, Quaternion.identity);
+			bulletCreate.rigidbody.AddForce(transform.forward * bulletSpeed);
+	
+	}
+}
+}
+
+
+
+
+
+var health:float = 90;
+var enemy : GameObject;
+
+function Damage(dmg:float){
+health -= dmg;
+}
+
+function Update (){
+if(health <=0){
+
+Destroy(enemy);
+
+}
+
+}
+
+
+
+
+
+
+var dmg:float = 5;
+
+function OnTriggerEnter(hit:Collider){
+if(hit.tag == "Enemy"){
+hit.transform.SendMessage("Damage",dmg);
+
+}
+
+}

@@ -1,0 +1,36 @@
+RAM : data
+0x0000: HeroPositionX
+0x0001: HeroPositionY
+0x0002: HeroVelocityX
+0x0003: HeroVelocityY
+
+
+updateheroPositionY: heroPositionY = heroPositionY + heroVelocityY
+0x0000: 0x0003 load address of heroVelocityY to address register
+0x0001: 0xFC10 load heroVelocityY from memory to data register
+0x0002: 0x0001 load address of heroPositionY to address register
+0x0003: 0xF088 load heroPositionY + heroVelocityY to heroPositionY
+
+checkHeroOffBottom: (heroPositionY >= 480)
+0x0004: 0x01E0 load 480 into address register
+0x0005: 0xEC10 load value of address register to data register
+0x0006: 0x0001 load address of heroPositionY to address register
+0x0007: 0xF1D0 load heroPositionY - 480 to data register
+0x0008: 0x0010 load ROM address of invertheroVelocityY code to address register
+0x0009: 0xE303 jump to invertheroVelocityY code if data register >= 0
+
+checkHeroOffTop: (HeroPositionY < 0)
+0x000A: 0x0001 load address of heroPositionY to address register
+0x000B: 0xFC10 load heroPositionY to data register
+0x000C: 0x0010 load ROM address of invertheroVelocityY code to address register
+0x000D: 0xE304 jump invertheroVelocityY code if data regsiter < 0
+0x000E: 0x0012 load ROM address of endofLoop code into address register
+0x000F: 0xEFC7 jump to endOfLoop code
+
+invertPlayerVelocityY: HeroVelocityY = -heroVelcoityY
+0x0010: 0x0003 load address of heroVelocityY into address register
+0x0011: 0xFCC8 load -(heroVelocityY) into heroVelocityY in RAM
+
+endOfLoop
+0x0012: 0x0000 load ROM address of updateheroPositionY code into address register
+0x0013: 0xEFC7 jump to updateheroPositionY

@@ -1,0 +1,60 @@
+Week 2 Exercise 
+
+
+
+I have chosen the game Donkey Kong.
+
+
+
+
+IF
+
+
+
+
+If ( !gameover) { playOneGameFrame; }
+
+
+
+If ( noLivesLeft ) { showGameOver; }
+
+
+
+
+
+
+AND
+
+
+
+
+If (playerOnScreen && gameInPlay ) { updatePlayerPosition; playMusic; }
+
+
+
+If (playerHitsPrincess && gameInPlay ) { finishGame; playEndMusic; }
+
+If (playerOnScreen && playerMoving ) { playBeep; }
+
+If (playerControllerLeft && !playerOffLeft ) { movePlayerLeft;}
+
+If (playerControllerRight && !playerOffRight ) { movePlayerRight;}
+
+
+
+
+
+OR 
+
+
+
+
+If (playerHitsBarrel || playerHitsEnemy; ) {
+ resetPlayerPosition; takeAwayLife; }
+
+
+
+
+
+
+	
